@@ -1,0 +1,10 @@
+{% if all_hives %}
+    <h2>Meine Bienenstoecke</h2>
+    <ul>
+        {% for hive in all_hives %}
+        <li><a href="{{ hive.name }}">{{ hive.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <h3> Keine Bienenstoecke konfiguriert </h3>
+{% endif %}

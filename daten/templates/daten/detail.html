@@ -1,0 +1,22 @@
+<h1> Für den Bienenstock "{{ hive.name }}" wurden folgende Werte aufgezeichnet</h1>
+<table>
+    <tr>
+        <th>Tag</th>
+        <th>Monat</th>
+        <th>Jahr</th>
+        <th>Temperatur</th>
+        <th>Luftdruck</th>
+        <th>Gewicht</th>
+    </tr>
+    {%  for measurement in hive.measurement_set.all %}
+        <tr>
+            <th>{{ measurement.day }}</th>
+            <th>{{ measurement.month }}</th>
+            <th>{{ measurement.year }}</th>
+            <th>{{ measurement.temperature }}</th>
+            <th>{{ measurement.pressure }}</th>
+            <th>{{ measurement.weight }}</th>
+
+        </tr>
+    {% endfor %}
+</table>
